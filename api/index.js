@@ -14,12 +14,12 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error("Error al conectar MongoDB:", err));
 
 // Rutas
-const authRoutes = require("../routes/auth");
-const todoRoutes = require("../routes/todos");
+const authRoutes = require("../routes/auth.js");
+const todoRoutes = require("../routes/todos.js");
 
 // Nota: en Vercel NO necesitas /api aquí porque ya estás dentro de /api
-app.use("/auth", authRoutes);
-app.use("/todos", todoRoutes);
+app.use("/auth.js", authRoutes);
+app.use("/todos.js", todoRoutes);
 
 // Exportar el server para Vercel
 module.exports = app;
